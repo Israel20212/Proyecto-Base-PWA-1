@@ -1,3 +1,9 @@
+# LISTA DE TAREAS OFFLINE
+
+Este es un proyecto de Lista de Tareas Offline (PWA) desarrollado con React, TypeScript y Vite.
+
+## Configuración Inicial
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
