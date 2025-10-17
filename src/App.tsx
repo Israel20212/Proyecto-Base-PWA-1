@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
+import './App.css';
 
 const App: React.FC = () => {
   const [refresh, setRefresh] = useState(false);
 
   return (
-    <div>
-      <h1>Lista de tareas offline</h1>
+    <div className="home-screen">
+            <h1>LISTA DE TAREAS OFFLINE</h1>
       <TaskForm onTaskSaved={() => setRefresh(!refresh)} />
       <TaskList key={refresh ? 'r1' : 'r2'} />
       <OfflineStatus />
@@ -24,6 +25,7 @@ const OfflineStatus: React.FC = () => {
     const goOffline = () => setIsOnline(false);
 
     window.addEventListener('online', goOnline);
+    window.removeEventListener('online', goOnline);
     window.addEventListener('offline', goOffline);
 
     return () => {
@@ -33,8 +35,8 @@ const OfflineStatus: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ color: isOnline ? 'green' : 'red' }}>
-      {isOnline ? '🔵 Conexión disponible' : '🔴 Offline — los datos se guardan localmente'}
+    <div className={isOnline ? 'status-online' : 'status-offline'}>
+      {isOnline ? '✅ Estás en línea. ¡Todo listo para sincronizar!' : '❌ Estás sin conexión. Los cambios se guardarán localmente.'}
     </div>
   );
 };

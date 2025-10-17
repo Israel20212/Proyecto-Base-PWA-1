@@ -21,13 +21,15 @@ const TaskList: React.FC = () => {
   }, []);
 
   return (
-    <ul>
+    <div className="task-list-container">
       {tasks.map((task) => (
-        <li key={task.id}>
-          <strong>{task.title}</strong> — {task.description}
-        </li>
+        <div key={task.id} className="task-item">
+          <h3 className="task-title">{task.title}</h3>
+          <p className="task-description">{task.description}</p>
+          <span className="task-timestamp">{new Date(task.timestamp).toLocaleString()}</span>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 

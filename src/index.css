@@ -2,7 +2,9 @@ body, html, #root {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a2e; /* Un fondo oscuro para un look moderno */
+  color: #e0e0e0; /* Color de texto claro para contraste */
 }
 
 .splash-screen, .home-screen {
@@ -11,8 +13,9 @@ body, html, #root {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #FFF3E0; /* background_color del manifest */
-  color: #D84315; /* theme_color */
+  background-color: #1a1a2e; /* Asegura que estas pantallas usen el fondo global */
+  color: #e0e0e0; /* Asegura que estas pantallas usen el color de texto global */
+  text-align: center;
 }
 
 .logo {

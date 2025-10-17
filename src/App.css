@@ -1,21 +1,103 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.task-list-container {
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-item {
+  background-color: #34495e; /* Fondo oscuro para cada tarea */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.task-title {
+  color: #00b894; /* Verde vibrante para el título de la tarea */
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgba(0, 184, 148, 0.3);
+  padding-bottom: 8px;
+}
+
+.task-description {
+  color: #e0e0e0; /* Color de texto claro para la descripción */
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.task-timestamp {
+  color: #95a5a6; /* Gris suave para la marca de tiempo */
+  font-size: 0.85rem;
+  font-style: italic;
+  display: block;
+  text-align: right;
+}#root {
+  max-width: 900px; /* Un ancho más contenido */
+  margin: 40px auto; /* Más espacio vertical */
+  padding: 2.5rem; /* Un poco más de padding */
   text-align: center;
 }
 
+h1 {
+  color: #00b894; /* Un verde vibrante para el título */
+  margin-bottom: 2rem;
+  font-size: 2.8em; /* Título más grande */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-transform: uppercase; /* Todo en mayúsculas */
+}
+
+.home-screen {
+  background-color: #2c3e50; /* Un gris azulado oscuro */
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.status-online {
+  color: #00b894; /* Verde vibrante */
+  font-weight: bold;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #00b894;
+  border-radius: 25px;
+  background-color: #1a1a2e; /* Fondo oscuro */
+  box-shadow: 0 2px 8px rgba(0, 184, 148, 0.3);
+}
+
+.status-offline {
+  color: #ff6b6b; /* Rojo vibrante */
+  font-weight: bold;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid #ff6b6b;
+  border-radius: 25px;
+  background-color: #1a1a2e; /* Fondo oscuro */
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 8em; /* Logo más grande */
+  padding: 2em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms ease-in-out;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2.5em #00b894aa); /* Sombra verde vibrante */
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2.5em #61dafb);
 }
 
 @keyframes logo-spin {
@@ -34,9 +116,79 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 2.5em;
+  background-color: #2c3e50; /* Fondo oscuro para tarjetas */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .read-the-docs {
-  color: #888;
+  color: #8e44ad; /* Un color púrpura distintivo */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
+
+.read-the-docs:hover {
+  color: #9b59b6;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 550px;
+  margin: 2.5rem auto;
+  padding: 30px;
+  background-color: #34495e; /* Un tono más oscuro para el formulario */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.task-input,
+.task-textarea {
+  padding: 14px 18px;
+  font-size: 1.05rem;
+  border: 1px solid #5fa2e0; /* Un azul más suave */
+  border-radius: 10px;
+  background-color: #1a1a2e; /* Fondo oscuro para inputs */
+  color: #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-input:focus,
+.task-textarea:focus {
+  border-color: #00b894; /* Verde vibrante al enfocar */
+  box-shadow: 0 0 0 4px rgba(0, 184, 148, 0.3);
+  outline: none;
+}
+
+.task-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.task-button {
+  padding: 14px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #00b894; /* Verde vibrante */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.task-button:hover {
+  background-color: #009e7c; /* Verde más oscuro al pasar el ratón */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 184, 148, 0.4);
+}
+
+.task-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 184, 148, 0.2);
+}
+

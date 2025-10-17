@@ -32,7 +32,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskSaved }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={formStyle}>
+    <form onSubmit={handleSubmit} className="task-form">
       <input
         name="title"
         type="text"
@@ -40,50 +40,20 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskSaved }) => {
         value={task.title}
         onChange={handleChange}
         required
-        style={inputStyle}
+        className="task-input"
       />
       <textarea
         name="description"
         placeholder="Descripción"
         value={task.description}
         onChange={handleChange}
-        style={textareaStyle}
+        className="task-textarea"
       />
-      <button type="submit" style={buttonStyle}>
+      <button type="submit" className="task-button">
         Guardar tarea
       </button>
     </form>
   );
-};
-
-// Estilos básicos en línea (puedes usar CSS o Tailwind si prefieres)
-const formStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '10px',
-  width: '100%',
-  maxWidth: '400px',
-  margin: '0 auto',
-};
-
-const inputStyle: React.CSSProperties = {
-  padding: '8px',
-  fontSize: '16px',
-};
-
-const textareaStyle: React.CSSProperties = {
-  padding: '8px',
-  fontSize: '16px',
-  minHeight: '80px',
-};
-
-const buttonStyle: React.CSSProperties = {
-  padding: '10px',
-  fontSize: '16px',
-  backgroundColor: '#4CAF50',
-  color: 'white',
-  border: 'none',
-  cursor: 'pointer',
 };
 
 export default TaskForm;
